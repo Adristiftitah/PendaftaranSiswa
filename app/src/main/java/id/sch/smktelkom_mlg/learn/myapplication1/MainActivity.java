@@ -3,10 +3,12 @@ package id.sch.smktelkom_mlg.learn.myapplication1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity {
 
     EditText etNama;
+    RadioGroup rgJK;
     RadioButton rbLK, rbPM;
     CheckBox cbRPL, cbTKJ, cbMM;
     Spinner spProvinsi;
@@ -34,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
         tvJurusan = (TextView) findViewById(R.id.textViewJurusan);
-
-
+        etNama = (EditText) findViewById(R.id.editTextNama);
+        rgJK = (RadioGroup) findViewById(R.id.radioGroupJK);
         rbLK = (RadioButton) findViewById(R.id.radioButtonLK);
+
         rbPM = (RadioButton) findViewById(R.id.radioButtonPM);
 
         cbRPL = (CheckBox) findViewById(R.id.checkBoxRPL);
@@ -58,19 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 doClick();
             }
         });
+    }
 
     private void doClick() {
-
-        String hasil = "Jurusan Anda : \n";
-        if (rbLK.isChecked()) {
-            hasil = rbLK.getText().toString();
-        } else if (rbPM.isChecked()) {
-            hasil = rbPM.getText().toString();
-        }
-        if (hasil == null) {
-            tvHasil.setText("Belum memilih Jenis Kelamin");
-        } else {
-            tvHasil.setText("Jenis Kelamin Anda: " + hasil);
+        String nama = etNama.getText().toString();
+        String hasil = "";
+        String jeniskelamin = null;
+        if(rgJK.getCheckedRadioButtonId() !=-1){
+            RadioButton rb = (RadioButton)
+                    findViewById(rgJK.getCheckedRadioButtonId());
+            jeniskelamin = rb.getText().toString() + "\n";
         }
         int startlen = hasil.length();
         if (cbRPL.isChecked()) hasil += cbRPL.getText() + "\n";
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if (hasil.length() == startlen) hasil += "Tidak ada pada pilihan";
         tvHasil.setText(hasil);
 
-        tvHasil.setText("Wilayah Provinsi " + spProvinsi.getSelectedItem().toString());
+        tvHasil.setText(nama + " Jurusan Anda "+ hasil + "Jenis Kelamin anda "+ jeniskelamin +" Asal Provinsi " + spProvinsi.getSelectedItem().toString());
     }
 
 
