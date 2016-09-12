@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#91f8ff">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,25 +15,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="id.sch.smktelkom_mlg.learn.myapplication1.MainActivity">
+    tools:context="id.sch.smktelkom_mlg.learn.myapplication1.MainActivity"
+    style="@style/Base.TextAppearance.AppCompat.Subhead">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pndaftaran Siswa"
+        android:text="Pendaftaran Siswa"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama"
-        android:id="@+id/textView3" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextNama" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Base.TextAppearance.AppCompat.Headline" />
 
     <ImageView
         android:layout_width="102dp"
@@ -46,6 +38,14 @@
         android:layout_toStartOf="@+id/textViewJurusan"
         android:layout_gravity="center_horizontal" />
 
+    <EditText
+        android:hint="Nama Pendaftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextNama" />
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,8 +53,16 @@
         android:layout_above="@+id/textView2"
         android:layout_alignLeft="@+id/checkBoxRPL"
         android:layout_alignStart="@+id/checkBoxRPL"
-        android:id="@+id/textViewJurusan" />
+        android:id="@+id/textViewJurusan"
+        style="@android:style/TextAppearance.Material.Subhead"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +71,8 @@
         android:layout_below="@+id/imageView"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView"
-        android:checked="false" />
+        android:checked="false"
+        android:layout_gravity="center_horizontal" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -73,7 +82,8 @@
         android:layout_below="@+id/checkBoxRPL"
         android:layout_alignLeft="@+id/checkBoxRPL"
         android:layout_alignStart="@+id/checkBoxRPL"
-        android:checked="false" />
+        android:checked="false"
+        android:layout_gravity="center_horizontal" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -83,8 +93,10 @@
         android:layout_below="@+id/checkBoxTKJ"
         android:layout_alignLeft="@+id/checkBoxTKJ"
         android:layout_alignStart="@+id/checkBoxTKJ"
-        android:checked="false" />
+        android:checked="false"
+        android:layout_gravity="center_horizontal" />
 
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +105,9 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_toRightOf="@+id/checkBoxRPL"
         android:layout_toEndOf="@+id/checkBoxRPL"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="20dp"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:layout_gravity="center_horizontal" />
 
     <Spinner
         android:layout_width="124dp"
@@ -104,7 +118,8 @@
         android:spinnerMode="dialog"
         android:layout_below="@+id/textView4"
         android:layout_toEndOf="@+id/textViewJurusan"
-        android:layout_toRightOf="@+id/textViewJurusan" />
+        android:layout_toRightOf="@+id/textViewJurusan"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,11 +129,14 @@
         android:layout_below="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="96dp" />
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
     <RadioGroup
-        android:layout_width="149dp"
+        android:layout_width="182dp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:id="@+id/radioGroupJK"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
@@ -135,7 +153,7 @@
             android:checked="false" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="124dp"
             android:layout_height="wrap_content"
             android:text="Perempuan"
             android:id="@+id/radioButtonPM"
@@ -150,7 +168,9 @@
         android:id="@+id/buttonOK"
         android:layout_above="@+id/textViewHasil"
         android:layout_toRightOf="@+id/radioGroup"
-        android:layout_toEndOf="@+id/radioGroup" />
+        android:layout_toEndOf="@+id/radioGroup"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -159,7 +179,10 @@
         android:id="@+id/textViewHasil"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/checkBoxRPL"
-        android:layout_alignEnd="@+id/checkBoxRPL" />
+        android:layout_alignEnd="@+id/checkBoxRPL"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>
 </ScrollView>

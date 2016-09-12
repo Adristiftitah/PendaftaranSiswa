@@ -81,7 +81,9 @@ public class MainActivity extends AppCompatActivity {
         if (hasil.length() == startlen) hasil += "Tidak ada pada pilihan";
         tvHasil.setText(hasil);
 
-        tvHasil.setText(nama + " Jurusan Anda "+ hasil + "Jenis Kelamin anda "+ jeniskelamin +" Asal Provinsi " + spProvinsi.getSelectedItem().toString());
+
+            tvHasil.setText(nama + " Jurusan Anda " + hasil + "Jenis Kelamin anda " + jeniskelamin + " Asal Provinsi " + spProvinsi.getSelectedItem().toString());
+
     }
 
 
